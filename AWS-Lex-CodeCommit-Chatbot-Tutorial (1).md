@@ -162,17 +162,20 @@ This intent answers questions about creating an AWS CodeCommit repository.
 5. Click **Add**
 ![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/amazon%20lex%20screenshot/Screenshot%202026-07-04%20125643.png?raw=true)
 
+---
+
 ### 6.2 Add Sample Utterances
 
 In the **Sample utterances** section, add each of the following:
 
-How do I create a repository in CodeCommit?
-Create a CodeCommit repository
-How can I make a new repository?
-I want to create a repo
-How do I make a CodeCommit repo?
-How do I create a new AWS repository?
-Show me how to create a CodeCommit repository
+
+- How do I create a repository in CodeCommit?
+- Create a CodeCommit repository
+- How can I make a new repository?
+- I want to create a repo
+- How do I make a CodeCommit repo?
+- How do I create a new AWS repository?
+- Show me how to create a CodeCommit repository
 
 ![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/amazon%20lex%20screenshot/Screenshot%202026-07-04%20125714.png?raw=true)
 
@@ -182,7 +185,6 @@ Show me how to create a CodeCommit repository
 
 Scroll to **Closing response** and enter:
 
-text
 To create a repository, run: aws codecommit create-repository --repository-name RepoName --repository-description 'description'. You can also do this from the AWS Console under CodeCommit > Repositories > Create repository.
 
 ### 6.4 Save Intent
@@ -203,18 +205,18 @@ Create a new empty intent named: `CloneRepository`
 
 ### 7.2 Add Sample Utterances
 
-How do I clone a CodeCommit repo?
-Clone a CodeCommit repository
-How can I download my repository?
-How do I clone my repo?
-Give me the CodeCommit clone command
-How do I get my CodeCommit repository on my computer?
-What command clones a CodeCommit repository?
+- How do I clone a CodeCommit repo?
+- Clone a CodeCommit repository
+- How can I download my repository?
+- How do I clone my repo?
+- Give me the CodeCommit clone command
+- How do I get my CodeCommit repository on my computer?
+- What command clones a CodeCommit repository?
 
 ### 7.3 Add Closing Response
 
 text
-You can clone your repository using: git clone https://git-codecommit.{region}.amazonaws.com/v1/repos/{RepoName}. Make sure you have configured Git credentials, SSH, HTTPS, or the credential helper first.
+You can clone your repository using: git clone https://git-codecommit.region.amazonaws.com/v1/repos/RepoName.Make sure you have configured Git credentials, SSH, HTTPS, or the credential helper first.
 
 
 ### 7.4 Save Intent
@@ -234,14 +236,14 @@ Create a new empty intent named: `ManagePermissions`
 
 ### 8.2 Add Sample Utterances
 
-text
-How do I give someone access to a repository?
-Manage repository permissions
-How do I add a user to CodeCommit?
-How do I control access to CodeCommit?
-How do I give permissions for a repo?
-How do I allow another developer to use my repository?
-How are CodeCommit permissions managed?
+
+- How do I give someone access to a repository?
+- Manage repository permissions
+- How do I add a user to CodeCommit?
+- How do I control access to CodeCommit?
+- How do I give permissions for a repo?
+- How do I allow another developer to use my repository?
+- How are CodeCommit permissions managed?
 
 
 ### 8.3 Add Closing Response
