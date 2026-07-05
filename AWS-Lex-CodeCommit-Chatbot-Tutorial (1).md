@@ -269,7 +269,7 @@ The first three intents are **simple Q&A intents**:
 
 The quiz is different — it has multiple steps and requires state tracking. That's why the quiz uses Lambda.
 
----
+
 
 ## 9. Step 5: Create the Lambda Function
 
