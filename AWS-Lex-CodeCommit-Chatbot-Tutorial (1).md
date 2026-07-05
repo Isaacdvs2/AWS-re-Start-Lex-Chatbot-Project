@@ -31,7 +31,7 @@ Users can ask natural-language questions about CodeCommit. The bot recognizes th
 
 **Example interaction:**
 
-```
+
 User:  How do I create a repository in CodeCommit?
 Bot:   To create a repository, run: aws codecommit create-repository 
        --repository-name {RepoName} --repository-description 'description'. 
@@ -44,7 +44,7 @@ Users start the quiz with a simple command. The bot asks 5 multiple-choice quest
 
 **Example interaction:**
 
-```
+
 User:  Start quiz
 Bot:   Welcome to the AWS CodeCommit Quiz!
        Question 1: What is AWS CodeCommit primarily used for?
@@ -165,7 +165,6 @@ This intent answers questions about creating an AWS CodeCommit repository.
 
 In the **Sample utterances** section, add each of the following:
 
-```text
 How do I create a repository in CodeCommit?
 Create a CodeCommit repository
 How can I make a new repository?
@@ -173,7 +172,7 @@ I want to create a repo
 How do I make a CodeCommit repo?
 How do I create a new AWS repository?
 Show me how to create a CodeCommit repository
-```
+
 ![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/amazon%20lex%20screenshot/Screenshot%202026-07-04%20125714.png?raw=true)
 
 > **Tip:** Include varied phrasing to improve intent recognition accuracy.
@@ -219,7 +218,7 @@ What command clones a CodeCommit repository?
 
 ### 7.3 Add Closing Response
 
-```text
+text
 You can clone your repository using: git clone https://git-codecommit.{region}.amazonaws.com/v1/repos/{RepoName}. Make sure you have configured Git credentials, SSH, HTTPS, or the credential helper first.
 
 ![imagine]()
