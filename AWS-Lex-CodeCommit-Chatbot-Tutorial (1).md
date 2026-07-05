@@ -181,7 +181,7 @@ Show me how to create a CodeCommit repository
 
 Scroll to **Closing response** and enter:
 
-```text
+text
 To create a repository, run: aws codecommit create-repository --repository-name RepoName --repository-description 'description'. You can also do this from the AWS Console under CodeCommit > Repositories > Create repository.
 
 ![imagine]()
@@ -531,7 +531,7 @@ def response(event, dialog_action_type, message, session_attributes):
         },
         "messages": [{"contentType": "PlainText", "content": message}],
     }
-```
+
 
 ### 10.5 Deploy the Function
 
