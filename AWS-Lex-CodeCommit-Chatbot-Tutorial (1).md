@@ -246,7 +246,7 @@ How are CodeCommit permissions managed?
 
 ### 8.3 Add Closing Response
 
-```text
+text
 Repository access is managed through IAM policies. Attach a policy granting codecommit actions to the user or role, scoped to the repository ARN. You can also use AWS IAM Identity Center for federated access.
 
 
