@@ -200,11 +200,9 @@ This intent explains how to clone a CodeCommit repository.
 
 Create a new empty intent named: `CloneRepository`
 
-![imagine]()
 
 ### 7.2 Add Sample Utterances
 
-```text
 How do I clone a CodeCommit repo?
 Clone a CodeCommit repository
 How can I download my repository?
@@ -236,7 +234,7 @@ Create a new empty intent named: `ManagePermissions`
 
 ### 8.2 Add Sample Utterances
 
-```text
+text
 How do I give someone access to a repository?
 Manage repository permissions
 How do I add a user to CodeCommit?
@@ -256,6 +254,7 @@ Repository access is managed through IAM policies. Attach a policy granting code
 
 Click **Save intent**.
 
+---
 
 ### Why These Intents Don't Need Lambda
 
