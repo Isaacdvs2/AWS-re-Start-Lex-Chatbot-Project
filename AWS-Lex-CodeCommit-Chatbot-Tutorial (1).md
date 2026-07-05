@@ -66,7 +66,8 @@ Bot:   Question 2: Which version control system does AWS CodeCommit support?
 ## 3. Architecture & Services
 
 ![imagine](https://github.com/Isaacdvs2/AWS-re-Start-Lex-Chatbot-Project/raw/main/resources/AWSLexFlow.png)
-```
+
+---
 
 | Service | Role in This Project |
 |---------|---------------------|
