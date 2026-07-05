@@ -84,10 +84,45 @@ The proposed solution is an interactive rule-based quiz chatbot developed using 
 
 When a learner starts the chatbot, they are welcomed and introduced to the quiz. The chatbot then asks a series of Amazon S3 questions, one at a time. After each response, the chatbot evaluates the answer against predefined correct answers, informs the learner whether their answer is correct or incorrect, and updates their score. Once all questions have been completed, the chatbot displays the learner's final score and offers the option to retake the quiz or end the conversation.
 
+The architecture of the AWS solution is displayed below:
 
+<a href="./resources/AWSLexArchDiag01.png">
+  <img src="./resources/AWSLexArchDiag01.png" 
+       alt="AmazonLexArchDiag" 
+       style="width: 100%; max-width: 900px; height: auto;">
+</a>
+As illustrated in the architecture diagram, learners or employees interact with the chatbot through the internet using a web interface or an application integrated with Amazon Lex. User messages are sent securely over HTTPS to Amazon Lex, which interprets the learner's intent and manages the conversation.
 
+**AWS Lambda** function is invoked whenever **business logic** is required—such as validating quiz answers, determining the next question, managing the learner's progress, or calculating the final score. The Lambda function processes the request and returns the appropriate response to Amazon Lex, which then presents it to the learner.
 
+**IAM** is used to control access between Amazon Lex and AWS Lambda using IAM permissions to ensure that only the authorised chatbot can invoke the Lambda function. Throughout execution, Lambda automatically sends logs to **Amazon CloudWatch Logs**, allowing developers to monitor chatbot activity, identify errors, and troubleshoot issues during development and after deployment.
 
+#### Benefits of this Architecture
+
+The proposed architecture provides several advantages:
+
+- Serverless: No servers or infrastructure need to be provisioned or maintained.
+- Scalable: AWS automatically scales the chatbot based on user demand.
+- Secure: IAM enforces secure communication between AWS services, while all user communication occurs over HTTPS.
+- Highly Available: Amazon Lex and AWS Lambda are fully managed services designed for high availability.
+- Cost-effective: Resources are consumed only when learners interact with the chatbot.
+- Maintainable: Business logic is isolated within AWS Lambda, making it easy to update quiz questions and functionality without modifying the chatbot's conversational design.
+
+#### Solution Cost to the Client
+| AWS Service                      | Usage Assumption                           | Estimated Monthly Cost (USD) | Estimated Monthly Cost (ZAR) |
+| -------------------------------- | ------------------------------------------ | ---------------------------: | ---------------------------: |
+| Amazon Lex V2                    | 1,000 text requests                        |                        $0.75 |                   **R13.88** |
+| AWS Lambda                       | 1,000 invocations (within Free Tier)       |                        $0.00 |                    **R0.00** |
+| AWS IAM                          | Identity and access management             |                        $0.00 |                    **R0.00** |
+| Amazon CloudWatch Logs           | Log storage and monitoring (minimal usage) |                        $0.10 |                    **R1.85** |
+| **Total Estimated Monthly Cost** |                                            |                    **$0.85** |                 **≈ R15.73** |
+
+#### 3.1 Solution Rollout
+Depending on the **organisation's requirements**, the chatbot can be made available in several ways:
+
+- **Amazon Lex Web UI**, allowing learners to access the chatbot directly through a web browser.
+- A custom **web or mobile application**, where developers integrate the application with Amazon Lex using the AWS SDK or APIs.
+- **Amazon API Gateway**, if the organisation wants to expose the chatbot through a RESTful API for integration with other systems.
 
 ### 4. Lessons Learnt
 
