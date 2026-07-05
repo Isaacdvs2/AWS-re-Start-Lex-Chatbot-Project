@@ -185,8 +185,6 @@ Scroll to **Closing response** and enter:
 text
 To create a repository, run: aws codecommit create-repository --repository-name RepoName --repository-description 'description'. You can also do this from the AWS Console under CodeCommit > Repositories > Create repository.
 
-![imagine]()
-
 ### 6.4 Save Intent
 
 Click **Save intent**.
@@ -215,20 +213,15 @@ Give me the CodeCommit clone command
 How do I get my CodeCommit repository on my computer?
 What command clones a CodeCommit repository?
 
-![imagine]()
-
 ### 7.3 Add Closing Response
 
 text
 You can clone your repository using: git clone https://git-codecommit.{region}.amazonaws.com/v1/repos/{RepoName}. Make sure you have configured Git credentials, SSH, HTTPS, or the credential helper first.
 
-![imagine]()
 
 ### 7.4 Save Intent
 
 Click **Save intent**.
-
-![imagine]()
 
 ---
 
@@ -240,7 +233,6 @@ This intent explains how CodeCommit access is managed through IAM.
 
 Create a new empty intent named: `ManagePermissions`
 
-![imagine]()
 
 ### 8.2 Add Sample Utterances
 
@@ -253,20 +245,17 @@ How do I give permissions for a repo?
 How do I allow another developer to use my repository?
 How are CodeCommit permissions managed?
 
-![imagine]()
 
 ### 8.3 Add Closing Response
 
 ```text
 Repository access is managed through IAM policies. Attach a policy granting codecommit actions to the user or role, scoped to the repository ARN. You can also use AWS IAM Identity Center for federated access.
 
-![imagine]()
 
 ### 8.4 Save Intent
 
 Click **Save intent**.
 
-![imagine]()
 
 ### Why These Intents Don't Need Lambda
 
