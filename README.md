@@ -24,14 +24,14 @@ Cloud Learners Inc. is an educational technology startup that provides online tr
 
 Rather than presenting learners with a traditional multiple-choice assessment, the company aims to provide a conversational quiz experience using Amazon Lex. 
 
-The initial implementation will focus on AWS CodeCommit and **[Tumelo Updates]**, with the possibility of expanding the chatbot to cover additional AWS services such as Amazon EC2, AWS Lambda, Amazon VPC, and AWS IAM in the future.
+The initial implementation will focus on AWS CodeCommit, with the possibility of expanding the chatbot to cover additional AWS services such as Amazon EC2, AWS Lambda, Amazon VPC, and AWS IAM in the future.
 
 #### Business Requirements
 The chatbot should:
 
 - Welcome learners and introduce the quiz.
 - Explain the quiz rules before starting.
-- Ask a series of questions about Amazon CodeCommit and **[Tumelo's Update]**.
+- Ask a series of questions about Amazon CodeCommit.
 - Accept user responses through natural language.
 - Determine whether each answer is correct or incorrect.
 - Provide immediate feedback after every question.
