@@ -66,7 +66,8 @@ Bot:   Question 2: Which version control system does AWS CodeCommit support?
 ## 3. Architecture & Services
 
 ![imagine](https://github.com/Isaacdvs2/AWS-re-Start-Lex-Chatbot-Project/raw/main/resources/AWSLexFlow.png)
-```
+
+---
 
 | Service | Role in This Project |
 |---------|---------------------|
@@ -161,17 +162,21 @@ This intent answers questions about creating an AWS CodeCommit repository.
 5. Click **Add**
 ![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/amazon%20lex%20screenshot/Screenshot%202026-07-04%20125643.png?raw=true)
 
+---
+
 ### 6.2 Add Sample Utterances
 
 In the **Sample utterances** section, add each of the following:
 
+```text
 How do I create a repository in CodeCommit?
 Create a CodeCommit repository
-How can I make a new repository?
-I want to create a repo
-How do I make a CodeCommit repo?
-How do I create a new AWS repository?
+ How can I make a new repository?
+ I want to create a repo
+ How do I make a CodeCommit repo?
+ How do I create a new AWS repository?
 Show me how to create a CodeCommit repository
+```
 
 ![imagine](https://github.com/MrPhadagi-bit/ppppp1/blob/main/amazon%20lex%20screenshot/Screenshot%202026-07-04%20125714.png?raw=true)
 
@@ -181,10 +186,9 @@ Show me how to create a CodeCommit repository
 
 Scroll to **Closing response** and enter:
 
-text
+```text
 To create a repository, run: aws codecommit create-repository --repository-name RepoName --repository-description 'description'. You can also do this from the AWS Console under CodeCommit > Repositories > Create repository.
-
-![imagine]()
+```
 
 ### 6.4 Save Intent
 
@@ -201,33 +205,28 @@ This intent explains how to clone a CodeCommit repository.
 
 Create a new empty intent named: `CloneRepository`
 
-![imagine]()
 
 ### 7.2 Add Sample Utterances
 
 ```text
 How do I clone a CodeCommit repo?
 Clone a CodeCommit repository
-How can I download my repository?
-How do I clone my repo?
+ How can I download my repository?
+ How do I clone my repo?
 Give me the CodeCommit clone command
-How do I get my CodeCommit repository on my computer?
-What command clones a CodeCommit repository?
-
-![imagine]()
+ How do I get my CodeCommit repository on my computer?
+ What command clones a CodeCommit repository?
+```
 
 ### 7.3 Add Closing Response
 
-text
-You can clone your repository using: git clone https://git-codecommit.{region}.amazonaws.com/v1/repos/{RepoName}. Make sure you have configured Git credentials, SSH, HTTPS, or the credential helper first.
-
-![imagine]()
+```text
+You can clone your repository using: git clone https://git-codecommit.region.amazonaws.com/v1/repos/RepoName.Make sure you have configured Git credentials, SSH, HTTPS, or the credential helper first.
+```
 
 ### 7.4 Save Intent
 
 Click **Save intent**.
-
-![imagine]()
 
 ---
 
@@ -239,7 +238,6 @@ This intent explains how CodeCommit access is managed through IAM.
 
 Create a new empty intent named: `ManagePermissions`
 
-![imagine]()
 
 ### 8.2 Add Sample Utterances
 
@@ -251,21 +249,19 @@ How do I control access to CodeCommit?
 How do I give permissions for a repo?
 How do I allow another developer to use my repository?
 How are CodeCommit permissions managed?
-
-![imagine]()
+```
 
 ### 8.3 Add Closing Response
 
 ```text
 Repository access is managed through IAM policies. Attach a policy granting codecommit actions to the user or role, scoped to the repository ARN. You can also use AWS IAM Identity Center for federated access.
-
-![imagine]()
+```
 
 ### 8.4 Save Intent
 
 Click **Save intent**.
 
-![imagine]()
+---
 
 ### Why These Intents Don't Need Lambda
 
@@ -278,7 +274,7 @@ The first three intents are **simple Q&A intents**:
 
 The quiz is different — it has multiple steps and requires state tracking. That's why the quiz uses Lambda.
 
----
+
 
 ## 9. Step 5: Create the Lambda Function
 
@@ -531,7 +527,7 @@ def response(event, dialog_action_type, message, session_attributes):
         },
         "messages": [{"contentType": "PlainText", "content": message}],
     }
-
+```
 
 ### 10.5 Deploy the Function
 
