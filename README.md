@@ -65,8 +65,9 @@ The chatbot should be:
 - Easy to use for beginner cloud learners.
 - Responsive, with minimal delays between questions.
 - Accurate in evaluating user responses.
-- Easy to maintain and extend with additional AWS service quizzes.
-- ***Available through supported Amazon Lex deployment channels.***
+- Easy to maintain and extend with additional AWS service quizzes.  
+
+---
 
 ### 2. Amazon Lex Overview
 #### What is Amazon Lex?
@@ -78,6 +79,8 @@ Originally, Amazon Lex was designed around Natural Language Understanding (NLU),
 Amazon Lex has introduced support for Large Language Models (LLMs) through integration with services such as Amazon Bedrock, allowing developers to build more intelligent and flexible conversational experiences.
 
 For this project, the traditional Amazon Lex approach was selected
+
+---
 
 ### 3. Solution Overview
 The proposed solution is an interactive rule-based quiz chatbot developed using Amazon Lex. This solution follows a predefined conversational flow. The chatbot uses intents, sample utterances, slots, and preconfigured responses to guide learners through the quiz and provide immediate feedback based on their answers. The flow diagram of the solution is shown in the image below.
@@ -179,6 +182,8 @@ This section shows screenshots of the work done on the project and  AWS Lex Bot 
        style="width: 100%; max-width: 900px; height: auto;">
 </a>
 
+---
+
 ### 4. Group 6 Tasks Delegation
 The tasks for the project, amongst the group members, were assigned as follows:
 
@@ -188,3 +193,5 @@ The tasks for the project, amongst the group members, were assigned as follows:
 | **Ravern Phadagi** | Amazon Lex Chatbot Development | Designed and implemented the Amazon Lex chatbot, including creating intents, utterances, and configuring the chatbot conversation flow. | Completed |
 | **Gugulethu Oliphant** | AWS CodeCommit Chatbot Development | Developed the Amazon Lex intents and utterances related to AWS CodeCommit functionality and contributed to the chatbot's knowledge base. | Completed |
 | **Tumelo Moyi** | Team Member | Attended the initial project meetings but did not contribute to the development or implementation of the project deliverables. | No Contribution |
+
+---
