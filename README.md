@@ -152,21 +152,21 @@ While the project focused on a relatively simple educational chatbot, it highlig
 #### 3.6 AWS Lex In Action
 This section shows screenshots of the work done on the project and  AWS Lex Bot in action:
 
-##### 1. Configuring the logic of the chatbot in AWS Lamda.
+##### 3.6.1. Configuring the logic of the chatbot in AWS Lamda.
 <a href="./resources/amazon lex screenshot/Screenshot 2026-07-04 130246.png">
   <img src="./resources/amazon lex screenshot/Screenshot 2026-07-04 130246.png" 
        alt="BotLogicLambda" 
        style="width: 100%; max-width: 900px; height: auto;">
 </a>
 
-##### 2. The intents that were added for the chatbot
+##### 3.6.2. The intents that were added for the chatbot
 <a href="./resources/amazon lex screenshot/Screenshot 2026-07-04 131355.png">
   <img src="./resources/amazon lex screenshot/Screenshot 2026-07-04 131355.png" 
        alt="BotIntents" 
        style="width: 100%; max-width: 900px; height: auto;">
 </a>
 
-##### 3. The User trying out the Chatbot
+##### 3.6.3. The User trying out the Chatbot
 <a href="./Amazon lex response/Screenshot 2026-07-05 120404.png">
   <img src="./Amazon lex response/Screenshot 2026-07-05 120404.png" 
        alt="UserBotConverse" 
