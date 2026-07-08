@@ -97,7 +97,7 @@ As illustrated in the architecture diagram, learners or employees interact with 
 
 **IAM** is used to control access between Amazon Lex and AWS Lambda using IAM permissions to ensure that only the authorised chatbot can invoke the Lambda function. Throughout execution, Lambda automatically sends logs to **Amazon CloudWatch Logs**, allowing developers to monitor chatbot activity, identify errors, and troubleshoot issues during development and after deployment.
 
-#### Benefits of this Architecture
+#### 3.1 Benefits of this Architecture
 
 The proposed architecture provides several advantages:
 
@@ -108,7 +108,7 @@ The proposed architecture provides several advantages:
 - Cost-effective: Resources are consumed only when learners interact with the chatbot.
 - Maintainable: Business logic is isolated within AWS Lambda, making it easy to update quiz questions and functionality without modifying the chatbot's conversational design.
 
-#### Solution Cost to the Client
+#### 3.2 Solution Cost to the Client
 | AWS Service                      | Usage Assumption                           | Estimated Monthly Cost (USD) | Estimated Monthly Cost (ZAR) |
 | -------------------------------- | ------------------------------------------ | ---------------------------: | ---------------------------: |
 | Amazon Lex V2                    | 1,000 text requests                        |                        $0.75 |                   **R13.88** |
@@ -117,13 +117,68 @@ The proposed architecture provides several advantages:
 | Amazon CloudWatch Logs           | Log storage and monitoring (minimal usage) |                        $0.10 |                    **R1.85** |
 | **Total Estimated Monthly Cost** |                                            |                    **$0.85** |                 **≈ R15.73** |
 
-#### 3.1 Solution Rollout
-Depending on the **organisation's requirements**, the chatbot can be made available in several ways:
+***Note the following***:
+- Amazon Lex is the primary cost driver, as charges are based on the number of text requests.
+- AWS Lambda is expected to remain within the AWS Free Tier for this level of usage, resulting in no additional cost.
+- IAM is provided at no charge.
+- CloudWatch Logs incurs only a small cost due to the limited volume of log data generated.
+
+#### 3.3 Solution Rollout
+Depending on the **organisation's requirements**, the **Group 6** cloud practitioner's chatbot can be made available in several ways:
 
 - **Amazon Lex Web UI**, allowing learners to access the chatbot directly through a web browser.
 - A custom **web or mobile application**, where developers integrate the application with Amazon Lex using the AWS SDK or APIs.
-- **Amazon API Gateway**, if the organisation wants to expose the chatbot through a RESTful API for integration with other systems.
+- **Amazon API Gateway**, if the organisation wants to expose the chatbot through a RESTful API for integration with other systems e.g., A learning Solution.
 
-### 4. Lessons Learnt
+#### 3.4 Lessons Learnt
+While the project focused on a relatively simple educational chatbot, it highlighted several important lessons about cloud-native development, managed services, and modern application architecture.
 
-### 5. Recommendation
+- One of the key lessons learnt was the value of using managed cloud services. Rather than building a chatbot framework from scratch, Amazon Lex provides built-in capabilities for natural language understanding, intent recognition, and conversation management. Similar with AWS Lambda.
+
+- A common misconception is that cloud solutions are expensive and are only suitable for large organisations. This project demonstrated that many AWS services operate on a pay-as-you-use pricing model, making them affordable even for students, startups, and small businesses. This shows that organisations can build professional, scalable applications without making significant upfront investments in servers or infrastructure.
+
+- Another important lesson is that many organisations are unaware of the capabilities offered by AWS beyond virtual machines and storage. For example, Amazon Lex enables organisations to create conversational interfaces for customer support, employee self-service, educational platforms, and knowledge assistants without requiring expertise in artificial intelligence or machine learning. 
+
+- This project showed that a traditional rule-based chatbot is often the better choice when the conversation follows a predictable structure.For a knowledge-check quiz, predefined intents, utterances, and responses provide greater control, consistency, and accuracy than AI-generated responses. This reinforces **the importance of selecting technology based on business requirements rather than current trends**.
+
+- The project highlighted the importance of separating different responsibilities within the application architecture. Each AWS service performs a specific role, this separation of concerns makes the solution easier to maintain, troubleshoot, and extend.
+
+#### 3.5 Challenges Encountered
+- **Understanding Amazon Lex** : One challenge was understanding the difference between the traditional intent-based approach and the newer LLM-enhanced capabilities available through integrations such as Amazon Bedrock. **Choosing the most appropriate approach** required understanding the project requirements rather than simply adopting the newest technology.
+- **Designing Effective Conversations**: Creating an engaging conversational experience required careful planning of intents, sample utterances, prompts, and responses.
+- **Managing Quiz Logic**: Although the chatbot itself was relatively simple, managing quiz progression, score calculation, and branching logic required careful consideration. Separating these responsibilities into AWS Lambda simplified the overall chatbot design and improved maintainability.
+- **Understanding AWS Architecture**: Another challenge was distinguishing between a conversation flow diagram and a cloud architecture diagram. While both describe the system, they communicate different aspects of the solution. This highlighted the importance of selecting the appropriate type of diagram when **documenting** cloud-based applications.
+
+#### 3.6 AWS Lex In Action
+This section shows screenshots of the work done on the project and  AWS Lex Bot in action:
+
+##### 1. Configuring the logic of the chatbot in AWS Lamda.
+<a href="./resources/amazon lex screenshot/Screenshot 2026-07-04 130246.png">
+  <img src="./resources/amazon lex screenshot/Screenshot 2026-07-04 130246.png" 
+       alt="BotLogicLambda" 
+       style="width: 100%; max-width: 900px; height: auto;">
+</a>
+
+##### 2. The intents that were added for the chatbot
+<a href="./resources/amazon lex screenshot/Screenshot 2026-07-04 131355.png">
+  <img src="./resources/amazon lex screenshot/Screenshot 2026-07-04 131355.png" 
+       alt="BotIntents" 
+       style="width: 100%; max-width: 900px; height: auto;">
+</a>
+
+##### 3. The User trying out the Chatbot
+<a href="./Amazon lex response/Screenshot 2026-07-05 120404.png">
+  <img src="./Amazon lex response/Screenshot 2026-07-05 120404.png" 
+       alt="UserBotConverse" 
+       style="width: 100%; max-width: 900px; height: auto;">
+</a>
+
+### 4. Group 6 Tasks Delegation
+The tasks for the project, amongst the group members, were assigned as follows:
+
+| Team Member | Role / Responsibility | Contribution | Status |
+|-------------|-----------------------|--------------|--------|
+| **Isaac Maake** | Project Coordinator, Meeting Facilitator, GitHub Repository Administrator | Coordinated all group meetings, assigned tasks, monitored project progress, created and managed the GitHub repository, assisted with project integration and collaboration. | Completed |
+| **Ravern Phadagi** | Amazon Lex Chatbot Development | Designed and implemented the Amazon Lex chatbot, including creating intents, utterances, and configuring the chatbot conversation flow. | Completed |
+| **Gugulethu Oliphant** | AWS CodeCommit Chatbot Development | Developed the Amazon Lex intents and utterances related to AWS CodeCommit functionality and contributed to the chatbot's knowledge base. | Completed |
+| **Tumelo Moyi** | Team Member | Attended the initial project meetings but did not contribute to the development or implementation of the project deliverables. | No Contribution |
