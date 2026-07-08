@@ -4,11 +4,13 @@
 ---
 <details>
 <summary>View Contributors/Authors</summary>
->aka Group 3
+> aka Group 3
+  
 - Masekela Isaac Maake
 - Gugulethu Oliphant
 - Mr. Raven Phadagi
 - Tumelo Moyi
+  
 </details>
 
 ---
