@@ -58,8 +58,8 @@ The solution must:
 - Calculate and display the learner's final score.
 - Provide a simple and user-friendly conversational experience.
 
-### Non-Functional Requirements
-Non-Functional requirements describe how well the system does its intended functions.
+#### Non-Functional Requirements
+Non-Functional requirements describe how well the system does its intended functions.  
 The chatbot should be:
 
 - Easy to use for beginner cloud learners.
